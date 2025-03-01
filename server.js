@@ -22,7 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: [process.env.PORT_FOLIO_URL, process.env.DASHBOARD_URL],
+    origin: [
+      process.env.PORT_FOLIO_URL,
+      process.env.DASHBOARD_URL,
+      process.env.OTHER_URL,
+    ],
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
     credentials: true,
   })

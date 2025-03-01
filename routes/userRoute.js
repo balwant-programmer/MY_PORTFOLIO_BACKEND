@@ -17,7 +17,7 @@ router.route("/logout").get(logout);
 router.route("/user").get(verifyToken, user);
 router
   .route("/userImageUpadte")
-  .patch(verifyToken, upload.single("upadate_logo"), UserImageUpadte);
+  .put(verifyToken, upload.single("upadate_logo"), UserImageUpadte);
 
 router.route("/userUpdate/:id").put(userUpadetCredatial);
 

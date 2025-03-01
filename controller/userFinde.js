@@ -1,6 +1,6 @@
 import { cloudinaryUpload } from "../Cloudinary/cloudinary.js";
 import { User } from "../model/userSchema.js";
-import path from 'node:path'
+import path from "node:path";
 export const user = async (req, res) => {
   const { id } = req.user;
   if (!id) return;
@@ -9,15 +9,19 @@ export const user = async (req, res) => {
   const { username, email, logo, _id } = user;
   res.status(201).json({ username, email, logo, userId: _id, success: true });
 };
+
 export const UserImageUpadte = async (req, res) => {
+  const file = req?.file;
   try {
-    const file = req.file;
-
-     const filename = crypto?.randomUUID() + path?.extname(req?.file?.originalname);
-       
-    const updateUrl = await cloudinaryUpload(file?.buffer ,filename);
+    if (!file) {
+      return res
+        .status(404)
+        .json({ message: "File not Found !", success: false });
+    }
+    const filename =
+      crypto?.randomUUID() + path?.extname(req?.file?.originalname);
+    const updateUrl = await cloudinaryUpload(file?.buffer, filename);
     const { id } = req.user;
-
     const user = await User.updateOne(
       { _id: id },
       { $set: { logo: updateUrl } },

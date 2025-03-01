@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
 import { config } from "dotenv";
-import streamifier from "streamifier";  // You missed this import
+import streamifier from "streamifier";  
 config({ path: "./config/config.env" });
 
 cloudinary.config({
@@ -22,7 +22,6 @@ export const cloudinaryUpload = async (buffer, filename) => {
           console.error("Error uploading to Cloudinary:", error);
           reject("Error uploading to Cloudinary: " + error.message);  
         } else {
-          console.log("Uploaded to Cloudinary:", result);
           resolve(result.secure_url);  
         }
       }
