@@ -20,7 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware
 app.use(
   cors({
-    origin: [process.env.PORT_FOLIO_URL, process.env.DASHBOARD_URL],
+    origin: [
+      process.env.PORT_FOLIO_URL,
+      process.env.DASHBOARD_URL,
+      "https://endearing-syrniki-19dda7.netlify.app",
+    ],
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
     credentials: true,
   })
