@@ -35,4 +35,3 @@ Welcome to my personal portfolio website! This site showcases my projects, skill
 ---
 
 ## 📂 Folder Structure
-

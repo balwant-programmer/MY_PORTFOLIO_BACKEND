@@ -23,7 +23,10 @@ app.use(
     origin: [
       process.env.PORT_FOLIO_URL,
       process.env.DASHBOARD_URL,
+
       "https://endearing-syrniki-19dda7.netlify.app",
+      "http://localhost:5173",
+      "http://192.168.1.18:5173",
     ],
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
     credentials: true,
