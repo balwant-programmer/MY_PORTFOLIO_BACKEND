@@ -27,6 +27,7 @@ app.use(
       "https://endearing-syrniki-19dda7.netlify.app",
       "http://localhost:5173",
       "http://192.168.1.18:5173",
+      "https://sensational-strudel-59b542.netlify.app",
     ],
     methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
     credentials: true,
